@@ -1,0 +1,183 @@
+{% extends 'music/basic.html' %}
+  {% block title %} NicStudios-Home {% endblock %}
+
+{% block css %}
+
+          .col-md-3
+          {
+          display: inline-block;
+          margin-left:-4px;
+          border-radius: 10px;
+          }
+
+          .carousel-indicators.active {
+          background-color: #dc3545;
+            }
+
+          .col-md-3 img{
+
+          max-width: 227px;
+          height: 242px;
+          }
+
+          body .carousel-indicator li{
+          background-color: #dc3545;
+          }
+
+          body .carousel-indicators{
+          bottom: 0;
+          }
+
+          body .carousel-control-next-icon{
+          background-color: #dc3545;
+          width: 22px;
+          height: 100px;
+          margin-right: -25px;
+          margin-top: 59vh;
+
+          }
+
+          body .carousel-control-prev-icon{
+          background-color: #dc3545;
+          width: 22px;
+          height: 100px;
+          margin-right: -25px;
+          margin-top: 59vh;
+
+        }
+
+          .carousel-control-prev,
+          .carousel-control-next{
+          top:200px;
+          bottom: auto;
+          }
+           body .no-padding{
+           padding-left: 0,
+           padding-right: 0;
+           }
+
+           .card{
+           color:#80111b;
+           text-align:center;
+            }
+
+          .card-img-top{
+              margin-left: 22px;
+              margin-right: inherit; 
+               }
+          #cardid{
+              margin-top: 40px;
+              margin-left: 10px;
+              margin-right: -14px;
+            }
+            
+          .crd{
+            
+            color:#80111b;
+            text-align:center;
+            background: #fff;
+            border-radius: 53px;
+            
+
+          }    
+
+          crd-img-top{
+
+            width: 100%;
+            height: inherit;
+          }
+
+          .tags{
+            margin-left: 20px;
+            margin-top: 30px;  
+        }
+        .tags h1{
+        color: crimson;
+      }
+      
+      .crd-img-top{
+          height: 166px;
+          max-width: 196px;
+          padding-top: 5px;
+          border-radius: 73px;
+    }
+    
+    .card-title,card-text{
+    color: #F44336;
+
+  }
+
+ {% endblock %}
+    }
+
+{% block body %}
+{% load static %}
+
+<div class="container">
+    <!--Slideshow starts here -->
+<div id="demo" class="carousel slide my-3" data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+
+       {% for i in range %}
+      <li data-target="#demo" data-slide-to="{{i}}" ></li>
+      {% endfor %}
+    </ul>
+
+    <div class="container carousel-inner no-padding">
+      <div class="carousel-item active">
+        {% for i in music|slice:":"%}
+        <a id="mv{{i.id}}" href="/musicview/{{i.id}}">
+          <div class="col-xs-3 col-sm-3 col-md-3">
+            <div class="card" style="width: 18rem;">
+              <img src='/media/{{i.image}}' class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{i.Sname}}</h5>
+                <p class="card-text">Singer:{{i.Singer}}</p>
+              
+              </div>
+            </div>
+          </div>
+          {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
+        </a>
+      </div>
+        <div class="carousel-item">
+        {% endif %}
+
+        {% endfor %}
+        </div>
+
+</div>
+</div>
+    <!-- left and right controls for the slide -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+</div>
+
+<!-- all items appear here !!!!!-->
+<div class="tags"><h1> All Music:</h1></div>
+        {% for i in music%}
+        <a id="mv {{i.id}}" href="/musicview/{{i.id}}">
+        <div id="cardid" class="col-xs-3 col-sm-3 col-md-3">
+          <div id="carditem" class="crd" style="width: 14.5rem; height: 21rem;">
+            <img src='/media/{{i.image}}' class="crd-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{i.Sname}}</h5>
+              <p class="card-text">Singer:{{i.Singer}}</p>
+            </div>
+          </div>
+        </div>
+      </a>
+        {% endfor %}
+
+
+ {% endblock %}
+
+
+
+
+

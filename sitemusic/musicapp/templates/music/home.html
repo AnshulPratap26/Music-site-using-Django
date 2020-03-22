@@ -1,0 +1,112 @@
+{% extends 'music/basic.html' %} <!--#loading from bacis named template that contains all basic this-->
+<!-- Title of the page!!! -->
+  {% block title %} NicStudios-Home {% endblock %}
+{% block css %}
+
+
+#swiperr{
+margin-top: 122px;
+}
+
+.swiper-wrapper{
+  padding-top: 3vh;
+}
+
+.swiper-slide-active{
+  border-radius: 31px;
+}
+
+.imgBx img{
+  border-radius: 165px;
+}
+
+.social ul li a{
+  margin-top: 103px;
+  color: white;
+}
+
+h3 {
+    <!-- font-size: 2.5rem; -->
+    text-align: center;
+    color: initial;
+    margin-left: 90vh;
+    margin-top: 4vh;
+  }
+
+.social ul li a{
+  background: #37614c;
+}
+
+
+
+{% endblock %}
+
+{% block body %} <!--body starts here -->
+{% load static %} <!--loads static files like javascript,css and images that we use.-->
+
+
+
+
+<h3 class="col-md-8">Stay with us on: </h3>
+
+<div class="col-md-8 social">
+	<ul>
+		<li><a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
+		<li><a href="#"><i class="fa fa-facebook-f" aria-hidden="true"></i></a></li>
+		<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+		<li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a></li>
+		<li><a href="#"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+    </ul>
+</div>
+
+
+<!--swiper starts from here-->
+
+<div id="swiperr" class="swiper-container">
+  <div class="text" style="text-align: center; padding-left: 14vh;">
+    <h4><span>&#8592;</span> swipe slider left side to see all Music </h4>
+  </div>
+    <div class="swiper-wrapper">
+        {% for i in music|slice:":"%} <!-- for loop for showing all product -->
+        <div class="swiper-slide">
+          <a id="mv{{i.id}}" href="/musicview/{{i.id}}">
+            <div class="imgBx">        <!--for showing image on slider -->
+                <img src='/media/{{i.image}}'>
+            </div>
+            <div class="details">      <!-- showing details in card -->
+                <h3>{{i.Sname}}<br><span>Singer:{{i.Singer}}</span></h3>
+            </div>
+          </a>
+            <div class="swiper-wrapper Active"></div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Add Pagination -->
+    <div id="pagei" class="swiper-pagination"></div>
+{% endblock %}
+
+
+{% block js %}
+<script type="text/javascript" src="{%static 'music/swiper.min.js'%}"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 60,
+        stretch: 0,
+        depth: 200,
+        modifier: 1,
+        slideShadows : true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  </script>
+
+{% endblock %}

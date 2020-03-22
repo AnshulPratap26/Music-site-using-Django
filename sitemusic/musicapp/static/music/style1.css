@@ -1,0 +1,81 @@
+.social
+{
+  margin: 0;
+  padding: 0;
+  background: #262626;
+}
+
+.social ul
+{
+  display: flex;
+  position: absolute;
+  top: 15%;
+  left:80%;
+  transform: translate(-50%,-50%);
+  margin-top: 20px;
+}
+
+.social ul li
+{
+  list-style: none;
+}
+
+.social ul li a
+{
+  width: 80px;
+  height: 80px;
+  background: #3e6f4c;
+  text-align: center;
+  line-height: 80px;
+  font-size: 35px;
+  margin: 0 10px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid black;
+  z-index: 1;
+}
+
+.social ul li a .fa
+{
+  position: relative;
+  color: #262626;
+  transform: .5s;
+  z-index: 3;
+}
+
+.social ul li a:hover .fa
+{
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.social ul li a:hover:before
+{
+  top: 0;
+}
+.social ul li:nth-child(1) a:hover
+{
+  background: #25D366;
+}
+
+.social ul li:nth-child(2) a:hover
+{
+  background: #3b5999;
+}
+
+.social ul li:nth-child(3) a:hover
+{
+  background: #e4405f;
+}
+
+.social ul li:nth-child(4) a:hover
+{
+  background: #dd4b39;
+}
+
+.social ul li:nth-child(5) a:hover
+{
+  background: #cd201f;
+}

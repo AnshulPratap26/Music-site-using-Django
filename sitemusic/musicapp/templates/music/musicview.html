@@ -1,0 +1,104 @@
+{% extends 'music/basic.html' %}
+{% block title%} fullview {% endblock %}
+
+{% block css %}
+
+h1{
+	color: #000;
+    font-family: aria;
+    font-style: italic;
+}
+
+.img img{
+	border-bottom-right-radius: 99px;
+    border-top-left-radius: 80px;
+    border-style: ridge;
+}
+
+p{
+	color: #443d1f;
+	font-size:22px;
+
+}
+
+.container{
+	text-align: center;
+	background:#fff;
+	padding-bottom: 5px;
+	padding-top:5px;
+	margin-top:15px;
+}
+
+#tit{
+	font-family:serif;
+	margin-top: 4px;
+	padding-bottom: 2px;
+}
+
+.audio{
+	display: inline-flex;
+}
+
+button{
+	margin-left: 82px;
+    border-radius: 26px;
+    background: #2a822ac7;
+    font-size: 1.5em;
+    border-style: hidden;
+    font-family: none;
+}
+
+button a
+	 {
+    color: #263550;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+buttom a:hover{
+	
+}
+
+{% endblock %}
+{% block body %}
+
+<div class="container">
+	<div class="mt-4">
+		<h1>Song: {{music.Sname}}</h1>
+	</div>
+
+	<div class="img mt-3">
+		<img src="/media/{{music.image}}">
+	</div>
+	
+	<div class="mt-3">
+		<p>Singer: {{music.Singer}}</p>
+	</div>
+	<div >
+		<p>Release Date: {{music.pub_date}}</p>
+	</div>
+	<div >
+		<p>Discription: {{music.disc}}</p>
+	</div>
+
+	<div class="audio">
+	<audio controls>
+  		<source src="{{music.song.url}}" type="audio/ogg">
+  		<source src="{{music.song.url}}" type="audio/mpeg">
+Your browser does not support the audio element.
+	</audio>
+	<button><a href="{{music.song.url}}" download>Download &#10507;</a></button>
+	</div>
+
+
+</div>
+
+<div class="container">
+	<h2 id="tit">watch your song on youtube</h2>
+	<div class="embed">
+		<iframe width="660px" height="315px" src="https://www.youtube.com/embed/kGc-CCJOA7A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+</div>
+
+{% endblock %}

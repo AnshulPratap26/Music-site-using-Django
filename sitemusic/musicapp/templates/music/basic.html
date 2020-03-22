@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<!--    meta tag of swiper in view music-->
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="{%static 'music/swiper.min.css'%}">
+    <link rel="stylesheet" type="text/css" href="{%static 'music/style.css'%}">
+
+    
+
+<!-- required meta tag for contact icon-->
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="{%static 'music/style1.css'%}">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+      <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/ico" href="{% static 'music/title.png' %}" />
+      <style>
+          
+          .nav-link:Hover{
+            background-color: #17a20ebf;
+            font-style: italic;
+            border-color: black;
+            border-radius: 5px;
+            
+          }
+          .body{
+            background-color: #0000001f;
+          }
+
+          .footer{
+            background-color: #000;
+            margin-top: 20vh;
+            margin-bottom: 20px;
+            width: 100%;
+          }
+          .row{
+            padding-top: 26px;
+            padding-left: 50px;
+          }
+
+          h5{
+            color: #868080;
+          }
+          #p {
+            color: #9c9792b8;
+          }
+
+     
+          a:hover
+            {
+            
+            text-decoration:none;
+            cursor:pointer;
+            }
+
+          a{
+            color: #6d7073;
+          }
+
+          {% block css %}
+          {% endblock %}
+      </style>
+
+  </head>
+  <body class="body">
+  {% load static %}
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-2" style="background-color: #143a22!important;">
+  <a class="navbar-brand" href="/"><img src=" {% static 'music/logo.png' %} "> </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-family: arial; font-size: 1.3rem;">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home<span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="/music">Music <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link " href="/contact">Query
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link " href="/about">AboutUs
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  {% block body %}
+
+   {% endblock %}
+
+   <!-- footer starts from here -->
+
+<div class="footer ">
+  <div class="row">
+    <div class="col-md-4 add">
+      <h5>Address:</h5>
+      <p id="p">UIT sec-7/356 <br>
+      Bhiwadi (Rajasthan)<br>
+    Pincode: 301019</p>
+    </div>
+
+    <div class="col-md-4 Page">
+      <h5>Pages:</h5>
+      <ul>
+        <li><a id="anchor" href="/">Home</a></li>
+        <li><a id="anchor" href="/">Music</a></li>
+        <li><a id="anchor" href="/">ContactUs</a></li>
+        <li><a id="anchor" href="/">Query</a></li>
+        
+      </ul>
+    </div>
+
+    <div class="col-md-4">
+      <h5>Location:</h5>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1025.505902572043!2d76.83332713440174!3d28.194090808195703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d3775c82fb151%3A0x76086c87fa197f51!2sShubham%20Interprices!5e0!3m2!1sen!2sin!4v1571739623772!5m2!1sen!2sin" width="200" height="150" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      
+    </div>
+
+  </div>
+  
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+ {% block js %} {% endblock %}
+  </body>
+
+</html>

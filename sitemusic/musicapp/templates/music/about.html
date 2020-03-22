@@ -1,0 +1,55 @@
+{% extends 'music/basic.html'%}
+{% block title %} Who we are? {% endblock %}
+
+{% block css %}
+
+ .about {
+    font-size: 1.75rem;
+    margin-top: 36px;
+    font-family: monospace;
+}
+
+#abt{
+	min-width: 200px;
+    max-width: 800px;
+    padding-top: 1em;
+}
+
+#abut{
+	margin-top:12px;
+}
+
+{% endblock %}
+
+{% block body %}
+{% load static %}
+
+<div class="container">
+
+		<h2 id="abut">About Us:</h2>
+
+		<img id="abt" src="{%static 'music/Team.jpg' %}">
+		<h3 class="about">Who we are?</h3>
+		<div>
+			<p>we are Specialied in making Beats and Recording Audios and Videos.
+			We have Expert Team Members in all categories regarding to Audios and Vidios.
+			All the latest necessary equipment we have.High quality Bass, clear Audiable Sound,and much
+			are mantained under the sight of our Experts.
+			We have an experience of 1 year in this field regarding to making Good Audios videos.
+	  		</p>
+		</div>
+		<img id="abt" src="{%static 'music/we.jpg' %}">
+		<h3 class="about">Why should you choose us ?</h3>
+		<div>
+			<p> 1. We have Specialised Team for Particular Work.<br>
+	   			2. All your Work will be on Time.<br>
+		   		3. Record Songs and Videos under Free Guidence of our Members.<br>
+		   		4. All your Queries will be Listen Solve on Time.<br>
+		   		5. Record Songs and Videos At Very Cheap Price than Market.<br>
+		   		6. High Quality Content Deliver Guaranteed.<br> </p>
+
+		</div>
+
+
+</div>
+{% endblock %}
